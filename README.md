@@ -22,6 +22,3 @@ gradle clean bootRepackage
 
 
 
-Patterns
-Dao Pattern
-Dto Pattern?
