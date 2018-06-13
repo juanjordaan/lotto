@@ -1,0 +1,54 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.2.RELEASE'
+		gedaVersion = '3.1.0'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE")
+	}
+}
+
+apply plugin : 'java'
+apply plugin : 'eclipse'
+apply plugin : 'idea'
+apply plugin : 'org.springframework.boot'
+//apply plugin : 'maven-publish'
+
+
+repositories {
+	mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-configuration-processor')
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	//compile("com.inspire-software.lib.dto.geda:geda.core:${gedaVersion}")
+	//compile("com.inspire-software.lib.dto.geda:geda.spring-integration:${gedaVersion}")
+	compile('org.modelmapper:modelmapper:2.0.0')
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+	testCompile('org.hsqldb:hsqldb')
+}
+
+springBoot {
+	executable = true
+}
+
+bootRun {
+	systemProperty 'spring.config.location', 'application-dev.properties'
+}
+
+
+test {
+	systemProperty 'spring.config.location', 'application-test.properties'
+}
