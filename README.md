@@ -1,4 +1,4 @@
-## Turfsport Lottery API
+## TS Lottery API
 #ts-lottery-api
 
 ### Requirements
@@ -8,7 +8,7 @@ Gradle 3 or 4
 #### Compile and Test ( with a Test Profile )
 gradle test -i
 
-
+The test will run src/test/java/org/ts/lotto/test/LotteryTest.java
 
 
 Alternatively:
