@@ -2,7 +2,7 @@
 #ts-lottery-api
 
 ### Requirements
-Java 8
+Java 8,
 Gradle 3 or 4
 
 #### Compile and Test ( with a Test Profile )
